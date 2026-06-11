@@ -1,0 +1,1210 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laxmi Biradar | Instructional Designer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* MODALS */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-content{
+background:white;
+width:90%;
+max-width:950px;
+border-radius:20px;
+padding:20px;
+position:relative;
+animation:fadeIn .3s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffffff;
+    color:#115e59;
+    border-radius:50%;
+    font-size:28px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    transition:all .3s ease;
+    z-index:10000;
+}
+
+.close:hover{
+    background:#115e59;
+    color:#ffffff;
+    transform:rotate(90deg);
+}
+
+.video-container iframe{
+width:100%;
+height:520px;
+border:none;
+border-radius:12px;
+}
+/* CAROUSEL */
+
+.carousel{
+position:relative;
+}
+
+.carousel img{
+width:100%;
+height:520px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.carousel-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(17, 94, 89, 0.9);
+border:none;
+color:white;
+font-size:22px;
+padding:12px 18px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.prev{
+left:15px;
+}
+
+.next{
+right:15px;
+}
+:root{
+    --primary:#0f766e;
+    --primary-dark:#115e59;
+    --secondary:#5eead4;
+    --accent:#ccfbf1;
+    --white:#ffffff;
+    --light:#f8fafc;
+    --text:#1e293b;
+    --text-light:#64748b;
+    --border:#e2e8f0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--light);
+    color:var(--text);
+}
+button{
+    cursor:pointer;
+}
+/* Navigation */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+nav a.active{
+    color:var(--primary);
+    font-weight:700;
+    position:relative;
+}
+nav a.active::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:3px;
+    background:var(--primary);
+    border-radius:10px;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 8%;
+    background:linear-gradient(135deg,#eff6ff,#ffffff);
+}
+
+.hero-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-image img{
+    width:380px;
+    height:430px;
+    object-fit:cover;
+    border-radius:30px;
+    border:8px solid white;
+    box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+.hero-content h4{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.hero-content h2{
+    color:var(--text-light);
+    margin:15px 0;
+}
+
+.hero-content p{
+    line-height:1.8;
+    margin-bottom:30px;
+    max-width:650px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    margin-right:15px;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:white;
+}
+
+.primary-btn:hover{
+    background:var(--primary-dark);
+}
+
+.secondary-btn{
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+/* Sections */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:60px;
+    color:var(--primary);
+}
+
+
+/* Alternating Section Colors */
+section:nth-of-type(odd):not(.hero){
+    background:#ffffff;
+}
+section:nth-of-type(even):not(.hero){
+    background:#ecfdf5;
+}
+
+/* About */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.9;
+}
+
+
+/* Modern About Section */
+
+.about-modern{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about-badge{
+display:inline-block;
+background:var(--primary);
+color:white;
+padding:10px 18px;
+border-radius:30px;
+font-size:.9rem;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.about-left h3{
+font-size:2.2rem;
+margin-bottom:20px;
+color:var(--text);
+}
+
+.about-left p{
+line-height:1.9;
+margin-bottom:20px;
+color:var(--text-light);
+}
+
+.about-right{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.about-feature{
+background:#ffffff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+border-left:5px solid var(--primary);
+transition:.3s;
+}
+
+.about-feature:hover{
+transform:translateY(-6px);
+}
+
+.about-feature h4{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.about-feature p{
+font-size:.95rem;
+line-height:1.7;
+color:var(--text-light);
+}
+
+@media(max-width:768px){
+.about-modern{
+grid-template-columns:1fr;
+}
+
+.about-right{
+grid-template-columns:1fr;
+}
+}
+
+
+/* Stats */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.stat-card h3{
+    color:var(--primary);
+    font-size:2.5rem;
+}
+
+/* Skills */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:var(--primary);
+    color:white;
+    padding:12px 22px;
+    border-radius:50px;
+    font-weight:500;
+}
+
+/* Portfolio */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.project-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 24px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:all .3s ease;
+}
+.project-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+/* Services */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.service-card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* Accessibility */
+
+.accessibility{
+    background:#eff6ff;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    line-height:2;
+}
+/* Modern Contact Section */
+.contact-modern{
+max-width:1200px;
+margin:auto;
+
+grid-template-columns:1fr 1.2fr;
+gap:40px;
+}
+
+.contact-info{
+background:var(--primary);
+color:white;
+padding:40px;
+border-radius:25px;
+}
+
+.contact-info h3{font-size:2rem;margin-bottom:20px;}
+.contact-info p{line-height:1.8;margin-bottom:25px;}
+.contact-item{margin-bottom:15px;}
+
+.social-icons{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:25px;
+}
+
+.social-icons a{
+text-decoration:none;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+}
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+@media(max-width:768px){
+.contact-modern{grid-template-columns:1fr;}
+}
+
+
+/* Modern Accessibility Section */
+
+.accessibility-modern{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.access-card{
+background:#ffffff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+border-top:5px solid var(--primary);
+transition:all .3s ease;
+}
+
+.access-card:hover{
+transform:translateY(-8px);
+}
+
+.access-card h3{
+color:var(--primary);
+margin-bottom:12px;
+font-size:1.1rem;
+}
+
+.access-card p{
+color:var(--text-light);
+line-height:1.7;
+}
+
+
+/* Contact */
+
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:10px;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:var(--primary);
+    color:white;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.social{
+    margin:20px 0;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-image img{
+    width:280px;
+    height:280px;
+}
+
+.hero-content h1{
+    font-size:2.7rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.video-container iframe,
+.carousel img{
+height:250px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">LB</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#portfolio">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="hero">
+<div class="hero-container">
+
+<div class="hero-image">
+<img src="images/profile.png" alt="Laxmi Biradar">
+</div>
+
+<div class="hero-content">
+<h4>Hello, I'm</h4>
+<h1>Laxmi Biradar</h1>
+<h2>Instructional Designer</h2>
+
+<p>
+Passionate about designing engaging, accessible, and learner-centered learning experiences. I specialize in Articulate Storyline 360, Rise 360, Canvas LMS, instructional design, and WCAG accessibility compliance.
+</p>
+
+<a href="#portfolio" class="btn primary-btn">View Portfolio</a>
+<a href="resume.pdf" target="_blank" class="btn secondary-btn">Download Resume</a>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+
+<div class="about-modern">
+
+<div class="about-left">
+<div class="about-badge">5+ Years Experience</div>
+<h3>Creating Meaningful Learning Experiences</h3>
+
+<p>
+I am a passionate Instructional Designer specializing in the creation of engaging, learner-centered, and accessible digital learning solutions. My expertise spans instructional design, eLearning development, LMS administration, and accessibility compliance.
+</p>
+
+<p>
+Over the years, I have collaborated with subject matter experts, stakeholders, and cross-functional teams to transform complex information into interactive and impactful learning experiences that drive measurable results.
+</p>
+
+<a href="#portfolio" class="btn primary-btn">Explore My Work</a>
+</div>
+
+<div class="about-right">
+
+<div class="about-feature">
+<h4>Instructional Design</h4>
+<p>Learning strategies, storyboards, assessments, and curriculum planning.</p>
+</div>
+
+<div class="about-feature">
+<h4>eLearning Development</h4>
+<p>Interactive courses using Storyline 360, Rise 360, Camtasia, and Vyond.</p>
+</div>
+
+<div class="about-feature">
+<h4>Learning Platforms</h4>
+<p>Canvas LMS, Blackboard, course administration, and learner management.</p>
+</div>
+
+<div class="about-feature">
+<h4>Accessibility Focus</h4>
+<p>WCAG-compliant learning experiences with inclusive design practices.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Highlights</h2>
+
+<div class="stats">
+<div class="stat-card">
+<h3>50+</h3>
+<p>eLearning Projects</p>
+</div>
+
+<div class="stat-card">
+<h3>5+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+<h3>10K+</h3>
+<p>Learners Impacted</p>
+</div>
+
+<div class="stat-card">
+<h3>100%</h3>
+<p>Accessibility Focus</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills & Tools</h2>
+
+<div class="skills">
+<span class="skill">Instructional Design</span>
+<span class="skill">eLearning Development</span>
+<span class="skill">Storyboarding</span>
+<span class="skill">Training Needs Analysis</span>
+<span class="skill">LMS Administration</span>
+<span class="skill">Canvas LMS</span>
+<span class="skill">Blackboard</span>
+<span class="skill">Articulate Storyline 360</span>
+<span class="skill">Articulate Rise 360</span>
+<span class="skill">Camtasia</span>
+<span class="skill">Vyond</span>
+<span class="skill">Canva</span>
+<span class="skill">Adobe Creative Tools</span>
+<span class="skill">Learning Assessment</span>
+<span class="skill">Multimedia Development</span>
+<span class="skill">SME Collaboration</span>
+<span class="skill">Project Coordination</span>
+<span class="skill">Visual Design</span>
+<span class="skill">Quality Review</span>
+</div>
+</section>
+
+<section id="portfolio">
+<h2 class="section-title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<img src="images/storyline.png" alt="Storyline Work">
+<div class="project-content">
+<h3>Storyline Work</h3>
+<p>Interactive scenario-based compliance course developed in Storyline 360.</p>
+<a href="https://laxmibiradar5.github.io/storyline/" target="_blank" class="project-btn">View Project</a>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/vyond.png" alt="Vyond Work">
+<div class="project-content">
+<h3>Vyond Work</h3>
+<p>Rise 360 blended learning experience for emerging leaders.</p>
+<button class="project-btn" onclick="openVideoModal()"> View Project </button>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/rise.png" alt="Rise Work">
+<div class="project-content">
+<h3>Rise Work</h3>
+<p>Hands-on software onboarding and simulation-based learning.</p>
+<button class="project-btn" onclick="openRiseCarouselModal()"> View Project </button>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/lms.png" alt="LMS Work">
+<div class="project-content">
+<h3>LMS Work</h3>
+<p>Hands-on software onboarding and simulation-based learning.</p>
+<button class="project-btn" onclick="openCarouselModal()"> View Project </button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="services">
+<h2 class="section-title">Services</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Instructional Design</h3>
+<p>Learning objectives, curriculum design, assessments, and storyboards.</p>
+</div>
+
+<div class="service-card">
+<h3>eLearning Development</h3>
+<p>Interactive Storyline 360 and Rise 360 learning experiences.</p>
+</div>
+
+<div class="service-card">
+<h3>Accessibility Consulting</h3>
+<p>WCAG audits, remediation, testing, and accessibility support.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Accessibility Expertise</h2>
+
+<div class="accessibility-modern">
+
+<div class="access-card">
+<h3>WCAG 2.2 Compliance</h3>
+<p>Designing learning experiences that meet accessibility standards and inclusive learning requirements.</p>
+</div>
+
+<div class="access-card">
+<h3>Keyboard Navigation</h3>
+<p>Ensuring all interactions can be accessed and completed without a mouse.</p>
+</div>
+
+<div class="access-card">
+<h3>Screen Reader Support</h3>
+<p>Optimized content structure, focus order, labels, and ARIA support.</p>
+</div>
+
+<div class="access-card">
+<h3>Color Contrast</h3>
+<p>Verifying visual accessibility using contrast validation and color checker tools.</p>
+</div>
+
+<div class="access-card">
+<h3>Accessible Interactions</h3>
+<p>Creating learner-friendly interactions that support diverse accessibility needs.</p>
+</div>
+
+<div class="access-card">
+<h3>Captions & Transcripts</h3>
+<p>Providing alternative formats for multimedia content to improve accessibility.</p>
+</div>
+
+</div>
+</section>
+
+
+
+<section id="contact">
+<h2 class="section-title">Let's Connect</h2>
+
+<div class="contact-modern">
+
+<div class="contact-info">
+<h3>Get In Touch</h3>
+
+<p>
+I’m always open to discussing instructional design projects, eLearning development opportunities, accessibility consulting, and innovative learning solutions. Whether you need engaging online courses, interactive learning experiences, WCAG-compliant accessible content, or customized training programs, I’m passionate about collaborating to create impactful learning outcomes. I enjoy partnering with organizations, educators, and teams to transform complex information into meaningful, learner-centered experiences that drive performance, engagement, and success. Let's connect and explore how we can bring your learning vision to life.
+</p>
+
+<div class="contact-item">📧 biradarlakshmi5@gmail.com</div>
+<div class="contact-item">📍 India</div>
+
+<div class="social-icons">
+<a href="https://www.facebook.com/share/1E5cNXNnyi/?mibextid=wwXIfr">📘 Facebook</a>
+<a href="https://www.linkedin.com/in/biradar-lakshmi-51567a268/" target="_blank">💼 LinkedIn</a>
+</div>
+</div>
+
+
+
+</div>
+</section>
+<footer>
+
+<h3>Laxmi Biradar</h3>
+<p>Instructional Designer</p>
+<p style="margin-top:15px;">
+© 2026 Laxmi Biradar. All Rights Reserved.
+</p>
+
+</footer>
+<!-- VIDEO MODAL -->
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+
+        <button
+            class="close"
+            aria-label="Close Video"
+            onclick="closeVideoModal()">
+            &times;
+        </button>
+
+        <div class="video-container">
+
+    <video
+        id="riseVideo"
+        controls
+        autoplay
+        playsinline
+        style="width:100%; border-radius:12px;">
+
+        <source src="videos/rise-demo.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+
+    </video>
+
+</div>
+
+    </div>
+</div>
+
+<!-- CAROUSEL MODAL -->
+
+<div id="carouselModal" class="modal">
+    <div class="modal-content">
+
+        <button
+            class="close"
+            aria-label="Close Carousel"
+            onclick="closeCarouselModal()">
+            &times;
+        </button>
+
+        <div class="carousel">
+
+            <img
+                id="carouselImage"
+                src="images/lms1.png"
+                alt="LMS Project">
+
+            <button
+                class="carousel-btn prev"
+                onclick="prevSlide()">
+                ❮
+            </button>
+
+            <button
+                class="carousel-btn next"
+                onclick="nextSlide()">
+                ❯
+            </button>
+
+        </div>
+
+    </div>
+</div>
+<div id="riseCarouselModal" class="modal">
+    <div class="modal-content">
+        <button class="close" onclick="closeRiseCarouselModal()">&times;</button>
+        <div class="carousel">
+            <img id="riseCarouselImage" src="images/rise1.jpg" alt="Rise Project">
+            <button class="carousel-btn prev" onclick="prevRiseSlide()">❮</button>
+            <button class="carousel-btn next" onclick="nextRiseSlide()">❯</button>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+
+        closeVideoModal();
+        closeCarouselModal();
+
+    }
+
+});
+/* RISE VIDEO */
+
+function openVideoModal(){
+
+    document.getElementById("videoModal").style.display = "flex";
+
+    const video = document.getElementById("riseVideo");
+
+    video.currentTime = 0;
+    video.play();
+}
+
+function closeVideoModal(){
+
+    document.getElementById("videoModal").style.display = "none";
+
+    const video = document.getElementById("riseVideo");
+
+    video.pause();
+    video.currentTime = 0;
+}
+
+/* LMS CAROUSEL */
+
+const slides=[
+"images/canva1.png",
+"images/canva2.png",
+"images/canva3.png",
+"images/canva4.png"
+];
+
+let currentSlide=0;
+
+function openCarouselModal(){
+
+document.getElementById("carouselModal").style.display="flex";
+
+document.getElementById("carouselImage").src=
+slides[currentSlide];
+}
+
+function closeCarouselModal(){
+
+document.getElementById("carouselModal").style.display="none";
+}
+
+function nextSlide(){
+
+currentSlide++;
+
+if(currentSlide>=slides.length){
+currentSlide=0;
+}
+
+document.getElementById("carouselImage").src=
+slides[currentSlide];
+}
+
+function prevSlide(){
+
+currentSlide--;
+
+if(currentSlide<0){
+currentSlide=slides.length-1;
+}
+
+document.getElementById("carouselImage").src=
+slides[currentSlide];
+}
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+window.onclick=function(event){
+
+const videoModal=
+document.getElementById("videoModal");
+
+const carouselModal=
+document.getElementById("carouselModal");
+
+if(event.target===videoModal){
+closeVideoModal();
+}
+
+if(event.target===carouselModal){
+closeCarouselModal();
+}
+
+};
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+        closeVideoModal();
+        closeCarouselModal();
+    }
+
+    if(document.getElementById("carouselModal").style.display==="flex"){
+
+        if(e.key==="ArrowRight"){
+            nextSlide();
+        }
+
+        if(e.key==="ArrowLeft"){
+            prevSlide();
+        }
+    }
+});
+
+const riseSlides=[
+"images/rise1.png",
+"images/rise2.png",
+"images/rise3.png",
+"images/rise4.png",
+"images/rise5.png",
+"images/rise6.png"
+];
+
+let currentRiseSlide=0;
+
+function openRiseCarouselModal(){
+document.getElementById("riseCarouselModal").style.display="flex";
+document.getElementById("riseCarouselImage").src=riseSlides[currentRiseSlide];
+}
+
+function closeRiseCarouselModal(){
+document.getElementById("riseCarouselModal").style.display="none";
+}
+
+function nextRiseSlide(){
+currentRiseSlide=(currentRiseSlide+1)%riseSlides.length;
+document.getElementById("riseCarouselImage").src=riseSlides[currentRiseSlide];
+}
+
+function prevRiseSlide(){
+currentRiseSlide=(currentRiseSlide-1+riseSlides.length)%riseSlides.length;
+document.getElementById("riseCarouselImage").src=riseSlides[currentRiseSlide];
+}
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Escape"){
+        closeVideoModal();
+        closeCarouselModal();
+    }
+
+    if(document.getElementById("carouselModal").style.display==="flex"){
+
+        if(e.key==="ArrowRight"){
+            nextSlide();
+        }
+
+        if(e.key==="ArrowLeft"){
+            prevSlide();
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+ const sections = document.querySelectorAll('section[id]');
+ const navLinks = document.querySelectorAll('nav ul li a');
+
+ function setActiveLink(){
+   let current='home';
+   sections.forEach(section=>{
+      const top = section.offsetTop - 120;
+      const height = section.offsetHeight;
+      if(window.scrollY >= top && window.scrollY < top + height){
+         current = section.getAttribute('id');
+      }
+   });
+
+   navLinks.forEach(link=>{
+      link.classList.remove('active');
+      if(link.getAttribute('href') === '#' + current){
+         link.classList.add('active');
+      }
+   });
+ }
+
+ window.addEventListener('scroll', setActiveLink);
+ setActiveLink();
+});
+</script>
+</body>
+</html>
+```
