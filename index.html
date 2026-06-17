@@ -689,7 +689,7 @@ Passionate about designing engaging, accessible, and learner-centered learning e
 </p>
 
 <a href="#portfolio" class="btn primary-btn">View Portfolio</a>
-<a href="resume.pdf" target="_blank" class="btn secondary-btn">Download Resume</a>
+<a href="https://docs.google.com/document/d/1fIhg_NOwGNevvPRnUdYp6XZ29ldgeqf4/edit?usp=sharing&ouid=107542164427655182265&rtpof=true&sd=true" target="_blank" class="btn secondary-btn">Download Resume</a>
 </div>
 
 </div>
@@ -741,7 +741,7 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 </div>
 </section>
 
-<section>
+<section id="skills">
 <h2 class="section-title">Highlights</h2>
 
 <div class="stats">
@@ -803,7 +803,7 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 <div class="project-content">
 <h3>Storyline Work</h3>
 <p>Interactive scenario-based compliance course developed in Storyline 360.</p>
-<a href="https://laxmibiradar5.github.io/storyline/" target="_blank" class="project-btn">View Project</a>
+<a href="https://laxmibiradar5.github.io/story/" target="_blank" class="project-btn">View Project</a>
 </div>
 </div>
 
@@ -820,8 +820,8 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 <img src="images/rise.png" alt="Rise Work">
 <div class="project-content">
 <h3>Rise Work</h3>
-<p>Hands-on software onboarding and simulation-based learning.</p>
-<button class="project-btn" onclick="openRiseCarouselModal()"> View Project </button>
+<p>Rise 360 blended learning experience for emerging leaders.</p>
+<button class="project-btn" onclick="openRiseVideoModal()"> View Project </button>
 </div>
 </div>
 
@@ -830,7 +830,7 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 <div class="project-content">
 <h3>LMS Work</h3>
 <p>Hands-on software onboarding and simulation-based learning.</p>
-<button class="project-btn" onclick="openCarouselModal()"> View Project </button>
+<button class="project-btn" onclick="openLMSVideoModal()"> View Project </button>
 </div>
 </div>
 
@@ -860,7 +860,7 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 </div>
 </section>
 
-<section>
+<section id="services">
 <h2 class="section-title">Accessibility Expertise</h2>
 
 <div class="accessibility-modern">
@@ -912,11 +912,11 @@ Over the years, I have collaborated with subject matter experts, stakeholders, a
 I’m always open to discussing instructional design projects, eLearning development opportunities, accessibility consulting, and innovative learning solutions. Whether you need engaging online courses, interactive learning experiences, WCAG-compliant accessible content, or customized training programs, I’m passionate about collaborating to create impactful learning outcomes. I enjoy partnering with organizations, educators, and teams to transform complex information into meaningful, learner-centered experiences that drive performance, engagement, and success. Let's connect and explore how we can bring your learning vision to life.
 </p>
 
-<div class="contact-item">📧 biradarlakshmi5@gmail.com</div>
+<div class="contact-item">📧 </strong><a style="color:white;" href="mailto:biradarlakshmi5@gmail.com"> biradarlakshmi5@gmail.com</a></div>
 <div class="contact-item">📍 India</div>
 
 <div class="social-icons">
-<a href="https://www.facebook.com/share/1E5cNXNnyi/?mibextid=wwXIfr">📘 Facebook</a>
+
 <a href="https://www.linkedin.com/in/biradar-lakshmi-51567a268/" target="_blank">💼 LinkedIn</a>
 </div>
 </div>
@@ -955,7 +955,7 @@ I’m always open to discussing instructional design projects, eLearning develop
         playsinline
         style="width:100%; border-radius:12px;">
 
-        <source src="videos/rise-demo.mp4" type="video/mp4">
+        <source src="videos/vyond.mp4" type="video/mp4">
 
         Your browser does not support the video tag.
 
@@ -966,6 +966,37 @@ I’m always open to discussing instructional design projects, eLearning develop
     </div>
 </div>
 
+<div id="riseVideoModal" class="modal">
+<div class="modal-content">
+
+<button class="close" onclick="closeRiseVideoModal()">
+&times;
+</button>
+
+<div class="video-container">
+<video id="riseVideo" controls autoplay style="width:100%;border-radius:12px;">
+<source src="videos/rise.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+</div>
+
+<div id="lmsVideoModal" class="modal">
+<div class="modal-content">
+
+<button class="close" onclick="closeLMSVideoModal()">
+&times;
+</button>
+
+<div class="video-container">
+<video id="lmsVideo" controls autoplay style="width:100%;border-radius:12px;">
+<source src="videos/lms.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+</div>
 <!-- CAROUSEL MODAL -->
 
 <div id="carouselModal" class="modal">
@@ -1022,7 +1053,32 @@ document.addEventListener("keydown", function(e){
     }
 
 });
-/* RISE VIDEO */
+
+function openRiseVideoModal(){
+    document.getElementById("riseVideoModal").style.display="flex";
+    const video=document.getElementById("riseVideo");
+    video.currentTime=0;
+    video.play();
+}
+
+function closeRiseVideoModal(){
+    document.getElementById("riseVideoModal").style.display="none";
+    const video=document.getElementById("riseVideo");
+    video.pause();
+}
+
+function openLMSVideoModal(){
+    document.getElementById("lmsVideoModal").style.display="flex";
+    const video=document.getElementById("lmsVideo");
+    video.currentTime=0;
+    video.play();
+}
+
+function closeLMSVideoModal(){
+    document.getElementById("lmsVideoModal").style.display="none";
+    const video=document.getElementById("lmsVideo");
+    video.pause();
+}
 
 function openVideoModal(){
 
